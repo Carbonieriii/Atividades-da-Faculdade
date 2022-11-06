@@ -1,0 +1,903 @@
+Exercicio 1
+#include <stdio.h>
+int main(void) {
+	printf("Hello...");
+	return 0;
+}
+
+Exercicio 2 
+#include <stdio.h>
+int main() {
+	int A = 10;
+	int B = 20;
+	int C = A+B;
+	printf("C = %d", C);
+	return 0;
+}
+
+Exercicio 3
+#include <stdio.h>
+int main() {
+	int A = 10;
+	int B = 20;
+	int C = A+B;
+	printf("A = %d\n", A);
+	printf("B = %d\n", B);
+	printf("C = %d\n", C);
+	return 0;
+}
+
+Exercicio 4
+#include <stdio.h>
+int main() {
+	char A = 'a';
+	printf("A = %c\n", A);
+	return 0;
+}
+
+Exercicio 5
+#include <stdio.h>
+int main() {
+	double X = 1.0;
+	double Y = 7.0;
+	double Z = X + Y;
+	printf("A = %f\n", Z);
+	return 0;
+}
+
+Exercicio 6
+#include <stdio.h>
+int main() {
+	float X = 5.0F;
+	float Y = 7.005F;
+	float Z = X + Y;
+	printf("Z = %f\n",Z);
+	return 0;
+}
+
+Exercico de exemplo do Scanf() utilizando caracter
+int main() {
+	char entrada;
+	printf("entre com um caracter qualquer: \n");
+	scanf("%c",&entrada);
+	printf("O caracter indicado foi: %c\n\n",entrada);
+	return 0;
+}
+
+Exercicio de exemplo do Scanf() utilizando int
+int main() {
+	setlocale(LC_ALL,"Portuguese");
+	int N;
+	printf("Entre com um valor numérico inteiro: \n");
+	scanf("%d",&N);
+	printf("O numero indicado foi: %d\n",N);
+	return 0;
+}
+“#include <locale.h> é uma função que adiciona a utilização do arquivo locale. h e da função setlocale() configurada adequadamente vai garantir que caracteres como “ç” e acentuação sejam exibidos normalmente em nosso programa.”
+
+Exercicio de exemplo do Scanf() utilizando float
+int main() {
+	setlocale(LC_ALL,"Portuguese");
+	float N;
+	printf("Entre com um valor numérico float: \n");
+	scanf("%f",&N);
+	printf("O numero indicado foi: %.3f\n",N);
+	return 0;
+}
+
+Exercicio de exemplo do Scanf() utilizando double
+int main() {
+	setlocale(LC_ALL,"Portuguese");
+	double N;
+	printf("Entre com um valor numérico float: \n");
+	scanf("%lf",&N);
+	printf("O numero indicado foi: %.2f\n",N);
+	return 0;
+}
+
+Exercicio de exemplo do Scanf() utilizando char s para nome
+int main() {
+	setlocale(LC_ALL,"Portuguese");
+	char Nome[40];
+	printf("Entre com o seu nome: \n");
+	scanf("%s",&Nome);
+	printf("\nO nome indicado foi: %s\n",Nome);
+	return 0;
+}
+
+Aplicar comentarios em C é //       */*/
+
+Exercicio 1 
+int main() {
+	setlocale(LC_ALL,"Portuguese");
+	int N1, N2, perimetro;
+	printf("Entre com o primeiro lado: \n");
+	scanf("%d",&N1);
+	printf("Entre com o segundo lado: \n");
+	scanf("%d",&N2);
+	perimetro = N1 * 2 + N2 * 2;
+	printf("\nO perimetro é: %d\n",perimetro);
+	return 0;
+}
+
+Exercicio 2 
+int main() {
+	setlocale(LC_ALL,"Portuguese");
+	int N1, N2, perimetro;
+	printf("Entre com o primeiro lado do retangulo: \n");
+	scanf("%d",&N1);
+	printf("Entre com o segundo lado do retangulo: \n");
+	scanf("%d",&N2);
+	perimetro = N1 * 2 + N2 * 2;
+	printf("\nO perimetro é: %d\n",perimetro);
+	return 0;
+}
+
+Exercico 3
+int main() {
+	setlocale(LC_ALL,"Portuguese");
+	int N1, area;
+	printf("Entre com o valor: \n");
+	scanf("%d",&N1);
+	area = N1 * 2;
+	if (N1 % 2 == 1 )
+	{
+		printf("Valor invalido");
+	}
+	else
+	{
+		printf("\nValor area: %d", area);
+	}
+	return 0;
+
+
+Exercicio retorno scanf()
+
+#include <stdio.h> 
+#include <locale.h>
+#define true 1
+int main() {
+	setlocale(LC_ALL,"Portuguese");
+	int valor, retorno, soma = 0;
+	printf("\nEntre com um valor qualquer: ");
+	while (true){
+		retorno = scanf("%d",&valor);
+		if(retorno == true)
+		soma = soma + valor;
+		else
+		{
+			break;
+		}
+		printf("\nEntre com qualquer valor: ");
+	}
+	printf("Soma = %d\n", soma);
+	return 0;
+}
+
+
+Exercicio operadores ++ e –
+#include <stdio.h> 
+#include <locale.h>
+#define true 1
+int main() {
+	setlocale(LC_ALL,"Portuguese");
+	int A,B;
+	printf("\nEntre com um valor numérico: ");
+	scanf("%d",&A);
+	printf("\nEntre com outro valor numérico: ");
+	scanf("%d",&B);
+	A++;
+	B++;
+	printf("\nSomando uma unidade em cada variável...\n ");
+	printf("A = %d\n",A);
+    printf("B = %d\n",B);
+	return 0;
+}
+
+Exercicio operador atribuição 
+#include <stdio.h> 
+#include <locale.h>
+int main() {
+	setlocale(LC_ALL,"Portuguese");
+	int A,B,C,D;
+	printf("\nEntre com o primeiro valor numérico: ");
+	scanf("%d",&A);
+	printf("\nEntre com o segundo valor numérico: ");
+	scanf("%d",&B);
+		printf("\nEntre com o terceiro valor numérico: ");
+	scanf("%d",&C);
+		printf("\nEntre com o quarto valor numérico: ");
+	scanf("%d",&D);
+	A += 2;
+	B -= 5;
+	C *= 2;
+	D /= 2;
+	printf("\nSeguindo a ordem temos os seguintes numeros: \n ");
+	printf("Soma = %d\n",A);
+    printf("Subtração = %d\n",B);
+    printf("Multiplicação = %d\n",C);
+    printf("Divisão = %d\n",D);
+	return 0;
+}
+
+(Exercicios acima ultimos da unidade 3)
+
+
+UNIDADE 4:
+
+Exercicio 1 
+#include <stdio.h> 
+#include <locale.h>
+int main() {
+	setlocale(LC_ALL,"Portuguese");
+	int i = 1,j = 2, k = 3;
+	printf("A expressão => (i < (j-k)) retornou %d" , (i < (j-k)));
+	if(i<(j-k))
+	printf("\n\n----- Expressão avaliada como TRUE -----\n\n");
+	else
+	printf("\n\n----- Expressão avaliada como FALSE -----\n\n");
+	
+	return 0;
+}
+
+Exercicio 5 
+#include <stdio.h> 
+#include <locale.h>
+int main() {
+	setlocale(LC_ALL,"Portuguese");
+	int i = 7,j = 7;
+	double x=0.0, y=999.9;
+	int result;
+	result = ! (i-j) + 1;
+	printf("\n\nResult = %d", result);
+	return 0;
+}
+
+Exercicio 7
+#include <stdio.h> 
+#include <locale.h>
+int main() {
+	setlocale(LC_ALL,"Portuguese");
+	int i = 7,j = 7;
+	double x=0.0, y=999.9;
+	int result;
+	result = !!i - !j + 10;
+	printf("\n\nResult = %d", result);
+	return 0;
+}
+
+Exercicio 11 
+#include <stdio.h> 
+#include <locale.h>
+int main() {
+	setlocale(LC_ALL,"Portuguese");
+	int i = 10,j = 12;
+	int result = (i&j);
+	printf("\n\nResult = %d", result);
+	return 0;
+}
+
+//Números pré definidos//
+#include <stdio.h>
+#include <locale.h>
+//Aula sobre arrays//
+int main()
+{
+setlocale(LC_ALL, "Portuguese");
+int Vetor[5] = {2,4,6,8,10},i;
+for(i=0;i < 5;i++)
+{
+printf("Os números são: %d \n", Vetor[i]);
+}
+return 0;
+}
+
+//Usuario que entra com a informação//
+#include <stdio.h>
+#include <locale.h>
+//Aula sobre arrays//
+int main()
+{
+setlocale(LC_ALL, "Portuguese");
+int Vetor[5],i,trab;
+for(i=0;i < 5;i++)
+{
+printf("Entre com um valor inteiro: ");
+scanf("%d",&trab);
+Vetor[i] = trab;
+}
+for(i=4;i>=0;i--)
+{
+printf("%d\n",Vetor[i]);
+}
+return 0;
+}
+
+//Modularidade//
+
+*Modularidade é a quebra do programa (dividir em partes), serve para fazer a manutenção/alteração no programa pois quando se divide o programa se tem um acesso mais prático pois fica mais facil a visualização..*
+
+*Refinamento sucessivo é o nome mais conhecido*
+*Exemplo a ser pensado é o refinamento sucessivo de função
+Exemplo: myfunction();// declarar uma função// 
+                int main(){
+                   myfunction();//chamando a função//
+                   return 0;
+                }
+
+
+declarando a função:
+void myfunction()
+{
+printf(“Hello\n”);
+{
+*
+
+Se tiver uma função em outro arquivo e quer utilizar em algum outro é necessario que coloque a função no include <nome da função>.
+
+#include <stdio.h>
+#include <locale.h>
+int printmsg(int n);
+int main(){
+	setlocale(LC_ALL,"Portuguese");
+	int codRetorno, n;
+	printf("Digite um número: \n");
+	scanf("%d", &n);
+	codRetorno = printmsg(n);
+	printf("codRetorno = %d \n", codRetorno);
+	return 0;
+}
+int printmsg(int n){
+	int i;
+	for(i=0;i<n;i++)
+	printf("Hello \n");
+	printf("Texto impresso %d vezes",n);
+	return 0;
+}
+#include <stdio.h>
+#include <locale.h>
+int Minvalor(int N1, int N2);
+int main(){
+	setlocale(LC_ALL,"Portuguese");
+	int N1,N2, Valorminimo;
+	printf("Digite um número: \n");
+	scanf("%d", &N1);
+	printf("Digite um número: \n");
+	scanf("%d", &N2);
+	Valorminimo = Minvalor(N1,N2);
+	printf("Valor minimo:  %d \n",Valorminimo);
+	return 0;
+}
+int Minvalor(int N1, int N2){
+	if (N1<N2)
+	return N1;
+	return N2;
+}
+
+
+
+//RECURSIVIDADE//
+
+iteração loop
+recursão quando tem repetição da seguinte maneira, quando se tem uma função e dentro dessa função se chama a mesma.
+
+//Struct//
+
+#include <stdio.h>
+#include <locale.h>
+
+typedef struct
+{
+	float Peso; //define o campo Peso
+	int Idade; //define o campo Idade
+	float Altura; //define o campo Altura
+}Pessoa; //define o nome do novo tipo criado 
+
+// declara o parametro como struct
+void imprimePessoa(Pessoa p)
+{
+	printf("Idade: %d  Peso: %.2f  Altura: %.2f\n", p.Idade,p.Peso,p.Altura);
+}
+int main ()
+{
+	setlocale(LC_ALL, "Portuguese");
+	Pessoa Joao, P2;
+	Pessoa povo[10];
+	
+	Joao.Idade = 15;
+	Joao.Peso = 60.546;
+	Joao.Altura = 1.89;
+	
+	povo[4].Idade = 23;
+	povo[4].Peso = 75.3;
+	povo[4].Altura = 1.67;
+	
+	P2 = povo[4];
+	P2.Idade++;
+	
+	//Chama a função struct
+	imprimePessoa(Joao);
+	imprimePessoa(povo[4]);
+	imprimePessoa(P2);
+	return 0;
+}
+
+#include <stdio.h>
+#include <locale.h>
+//Exercicio 1
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    int N1, N2, Area;
+    printf("Digite a base do triangulo: \n");
+    scanf("%d",&N1);
+    printf("Digite a altura do triangulo: \n");
+    scanf("%d",&N2);
+    Area = (N1 * N2/2); 
+    printf("A area do triangulo é: %d \n", Area);
+    return 0;
+}
+
+#include <stdio.h>
+#include <locale.h>
+//Exercicio 2
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    int N1, N2, Soma, Subtracao, Multiplicacao, Divisao;
+    printf("DIgite o primeiro número: \n");
+    scanf("%d",&N1);
+    printf("DIgite o segundo número: \n");
+    scanf("%d",&N2);
+    Soma = (N1 + N2);
+    Subtracao = (N1 - N2);
+    Multiplicacao = (N1 * N2);
+	Divisao = (N1/N2); 
+    printf("A soma dos números é: %d \n", Soma);
+    printf("A subtração dos números é: %d \n", Subtracao);
+    printf("A multiplicação dos números é: %d \n", Multiplicacao);
+    printf("A divisão dos números é: %d \n", Divisao);
+    return 0;
+}
+
+#include <stdio.h>
+#include <locale.h>
+//Exercicio 3
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    char Nome[40];
+    double Salario, vendas, comissao, salario_final;
+    printf("DIgite o seu nome: \n");
+    scanf("%s",&Nome);
+    printf("DIgite o seu salário fixo: \n");
+    scanf("%lf",&Salario);
+    printf("Digite o seu total de vendas em dinheiro: \n");
+    scanf("%lf",&vendas);
+    comissao = 0.20 * vendas;
+    salario_final = (Salario + comissao);
+    printf("Seu Nome: %s \n",Nome);
+    printf("Salario fixo: %2.lf \n", Salario);
+    printf("Total do salario com comissão: %.2lf \n", salario_final);
+    return 0;
+}
+
+#include <stdio.h>
+#include <locale.h>
+//Exercicio 4
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    char Nome[40];
+    double N1,N2,N3,M1,M2,M3,M4,MF;
+    printf("DIgite o seu nome: \n");
+    scanf("%s",&Nome);
+    printf("DIgite a primeira nota: \n");
+    scanf("%lf",&N1);
+    printf("DIgite a segunda nota: \n");
+    scanf("%lf",&N2); 
+printf("DIgite a primeira nota: \n");
+    scanf("%lf",&N3);
+    M1 = (N1*2);
+    M2 = (N2*4);
+    M3 = (N3*6);
+    M4 = (M1 + M2 + M3);
+    MF = (M4/12);
+    printf("Seu Nome: %s \n",Nome);
+    printf("Média ponderada: %.2lf \n", MF);
+    return 0;
+}
+
+//Exercicio 5
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    int N1, N2;
+    printf("DIgite o primeiro número: \n");
+    scanf("%d",&N1);
+    printf("DIgite o segundo número: \n");
+    scanf("%d",&N2);
+    if ( N1==N2 )
+    {
+       printf("Os números digitados são iguais. ");
+	}
+	if ( N1 < N2 )
+    {
+       printf("\n O maior número digitado foi: %d",N2);
+	}
+	if ( N2 < N1 )
+    {
+       printf("\n O maior número digitado foi: %d",N1);
+	}
+    return 0;
+}
+
+#include <stdio.h>
+#include <locale.h>
+//Exercicio 6
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    int N1;
+    printf("DIgite um número: \n");
+    scanf("%d",&N1);
+    if((N1 >= 200)&&(N1 <= 300))
+    {
+   	printf("O número digitado está entre o intervalo dos números 200 a 300: %d \n",N1);
+	}
+	else
+	{
+	printf("O número digitado não está no intervalo entre os números 200 a 300: %d \n",N1);
+	}
+    return 0;
+}
+
+#include <stdio.h>
+#include <locale.h>
+//Exercicio 7
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    double Folha1 = 0.50, Folha2 = 0.30, Xerox, Preco1, Preco2;
+    printf("Digite a quantidade de copias feita: \n");
+    scanf("%lf",&Xerox);
+    if (Xerox > 200)
+    {
+    Preco1 = (Folha2 * Xerox);
+    printf("O valor de folha é: .2lf \n", Preco1);
+	}
+	else
+	{
+	Preco2 = (Folha1 * Xerox);
+	printf("O valor de folha é: %.2lf \n", Preco2);
+	}
+    return 0;
+}
+
+#include <stdio.h>
+#include <locale.h>
+//Exercicio 8
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    char nome [40];
+    int idade;
+    printf("Digite o seu nome: \n");
+    scanf("%s",&nome);
+    printf("Digite a sua idade: \n");
+    scanf("%d",&idade);
+    if (idade <= 13 )
+    {
+    printf("Nome: %s \n",nome);
+    printf("Sua idade: %d \n", idade);
+    printf("Sua categoria é infantil! \n");
+	}
+    else if (idade <= 17)
+	{
+	printf("Nome: %s \n",nome);
+    printf("Sua idade: %d \n", idade);
+    printf("Sua categoria é juvenil! \n");
+	}
+	else 
+	{
+	printf("Nome: %s \n",nome);
+    printf("Sua idade: %d \n", idade);
+    printf("Sua categoria é senior! \n");
+	}
+    return 0;
+}
+
+#include <stdio.h>
+#include <locale.h>
+//Exercicio 9
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    int N1,N2,Menor;
+    printf("Digite um número: \n");
+    scanf("%d",&N1);
+    printf("Digite um número: \n");
+    scanf("%d",&N2);
+    if(N1<N2)
+    {
+    Menor = N1;
+    printf("O menor número é: %d \n",Menor);
+	}
+	else if (N2<N1)
+	{
+	Menor = N2;
+	printf("o menor número é: %d \n",Menor);
+	}
+    return 0;
+}
+
+#include <stdio.h>
+#include <locale.h>
+//Exercicio 10
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    double N1,N2,N3,calc1,calc2;
+    printf("Digite um número: \n");
+    scanf("%lf",&N1);
+    printf("Digite um número: \n");
+    scanf("%lf",&N2);
+    printf("Digiite um número: \n");
+    scanf("%lf",&N3);
+    calc1 = (N1+N2+N3);
+    calc2 = (calc1/3);
+    printf("A média aritimética é: %.2lf",calc2);
+    return 0;
+}
+
+#include <stdio.h>
+#include <locale.h>
+//Exercicio 11
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    int N1;
+    printf("Digite um número: \n");
+    scanf("%d",&N1);
+    if (N1%2==0)
+	{
+	printf("O número digitado é par: %d \n", N1);	
+	}   
+	else if (N1%2==1)
+	{
+	printf("O número digitado é impar: %d \n", N1);
+	}
+    return 0;
+}
+
+#include <stdio.h>
+#include <locale.h>
+//Exercicio 12
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    char nome [40];
+    double N1,N2,N3,calc1,calc2;
+    printf("Digite seu nome: \n");
+    scanf("%s",&nome);
+    printf("Digite a primeira nota: \n");
+    scanf("%lf",&N1);
+    printf("Dgite a segunda nota: \n");
+    scanf("%lf",&N2);
+    printf("Digite a terceira nota: \n");
+    scanf("%lf",&N3);
+    calc1 = (N1+N2+N3);
+    calc2 = (calc1/3);
+    printf("Nome: %s \n", nome);
+    printf("A média aritimética é: %.2lf \n",calc2);
+    return 0;
+}
+
+#include <stdio.h>
+#include <locale.h>
+//Exercicio 13
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+     int N1;
+    printf("DIgite um número: \n");
+    scanf("%d",&N1);
+    if((N1 >= 100)&&(N1 <= 200))
+    {
+   	printf("O número digitado está entre o intervalo dos números 100 a 200: %d \n",N1);
+	}
+	else
+	{
+	printf("O número digitado não está no intervalo entre os números 100 a 200: %d \n",N1);
+	}
+    return 0;
+}
+
+#include <stdio.h>
+#include <locale.h>
+//Exercicio 14
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    double grauC, grauF1,grauF2;
+    printf("DIgite a temperatura em Celsius: \n");
+    scanf("%lf",&grauC);
+    grauF1 = (9*grauC+160);
+    grauF2 = (grauF1/5);
+    printf("O valor convertido de Celsius para Fahrenheit é: %.2lf \n", grauF2);
+    return 0;
+}
+
+#include <stdio.h>
+#include <locale.h>
+//Exercicio 15
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    double grauC1, grauF,grauC2;
+    printf("DIgite a temperatura em Fahrenheit: \n");
+    scanf("%lf",&grauF);
+    grauC1 = ((grauF - 32)*5);
+    grauC2 = (grauC1/9);
+    printf("O valor convertido de Fahrenheit para Celsius é: %.2lf \n", grauC2);
+    return 0;
+}
+
+#include <stdio.h>
+#include <locale.h>
+//Exercicio 16
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    int A,B,C;
+    printf("DIgite o primeiro número: \n");
+    scanf("%d",&A);
+    printf("Digite o segundo número: \n");
+    scanf("%d",&B);
+    printf("Digite o terceiro número: \n");
+    scanf("%d",&C);
+    if ((A <= B) && (B<=C))
+    {
+    printf("A ordem crescente é: %d %d %d", A,B,C);
+	}
+	else if ((A <= C) && (C <= B))
+	{
+	printf("A ordem crescente é: %d %d %d", A,C,B);
+	}
+	else if ((B <= A) && (A <= C))
+	{
+	printf("A ordem crescente é: %d %d %d", B,A,C);
+	}
+	else if((B <= C) && (C <= A))
+	{
+	printf("A ordem crescente é: %d %d %d", B,C,A);
+	}
+	else if ((C <= A) && (A <= B))
+	{
+	printf("A ordem crescente é: %d %d %d", C,A,B);
+	}
+	else
+	{
+	printf("A ordem crescente é: %d %d %d", C,B,A);
+	}
+    return 0;
+}
+
+#include <stdio.h>
+#include <locale.h>
+//Exercicio 17
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    double N1,N2,N3,N4,M1,M2;
+    printf("DIgite a primeira nota: \n");
+    scanf("%lf",&N1);
+    printf("Digite a segunda nota: \n");
+    scanf("%lf",&N2);
+    printf("Digite a terceira nota: \n");
+    scanf("%lf",&N3);
+    printf("Digite a quarta nota: \n");
+    scanf("%lf",&N4);
+    M1 = (N1+N2+N3+N4);
+    M2 = (M1/4);
+    if (M2 >= 5)
+    {
+    printf("Aprovado,sua média é: %.2lf \n",M2);
+	}
+	else 
+	{
+	printf("Reprovado,sua média é: %.2lf \n",M2);
+	}
+    return 0;
+}
+
+#include <stdio.h>
+#include <locale.h>
+//Exercicio 18
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    int N1,N2,diferenca;
+    printf("DIgite o primeiro valor: \n");
+    scanf("%d",&N1);
+    printf("Digite o segundo valor: \n");
+    scanf("%d",&N2);
+    if(N1>N2)
+    {
+    diferenca = (N1-N2);
+    printf("A diferença dos números é: %d \n", diferenca);
+	}
+	else
+	{
+	diferenca = (N2-N1);
+    printf("A diferença dos números é: %d \n", diferenca);
+	}
+    return 0;
+}
+
+#include <stdio.h>
+#include <locale.h>
+//Exercicio 19
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    int i = 0;
+    while(i<=10)
+    {
+    printf("%d\n",i);
+    i++;
+	}
+    return 0;
+    
+
+#include <stdio.h>
+#include <locale.h>
+//Exercicio 20
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    int i = 100;
+    while(i>=1)
+    {
+    printf("%d\n",i);
+    i--;
+	}
+    return 0;
+    
+    
+    
+#include <stdio.h>
+
+int main() 
+{
+  double P1,P2,P3,M1,M2,M3,M4,MF;
+  printf("Digite a primeira nota: \n");
+  scanf("%lf", &P1);
+  printf("Digite a segunda nota: \n");
+  scanf("%lf", &P2);
+  printf("Digite a terceira nota: \n");
+  scanf("%lf", &P3);
+  
+  M1 = (P1*1);
+  M2 = (P2*2);
+  M3 = (P3*3);
+  M4 = (M1+M2+M3);
+  MF = (M4/6);
+   
+    if(MF >= 5)
+  {
+  	printf("Aprovado \n");
+  }
+  else
+  {
+  	printf("Reprovado \n");
+  }
+  
+    printf("Media: %.2lf \n", MF);
+    return 0;
+}
+
+
+int main() 
+{
+  int n, soma=0,somapar=0,maior=0;
+  
+  while(n<999)
+  {
+  	printf("Digite um valor inteiro: \n");
+  	scanf("%d", &n);
+  	soma = soma+n;
+  	if(n%2==0)
+    {
+	  somapar=somapar+n;	
+    }
+    if(maior<n&&n!=999)
+	{
+		maior=n;
+	}
+  }
+  
+    printf("\n\nSoma total: %d""\nSoma numeros pares: %d""\nMaior numero: %d", (soma-999),somapar,maior);
+}
+
+
