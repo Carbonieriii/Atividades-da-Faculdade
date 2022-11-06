@@ -1,0 +1,543 @@
+public class App 
+{
+    public static void main(String[] args) {
+        System.out.println("Primeiro projeto do curso:");
+         
+        //#region Dados Primitivos
+        //#region Tipos básicos de números.
+        byte tipoByte = -127;
+        Short tipoShort = 32767;
+        Integer tipoInt = 2147483647;
+        Long tipoLong = 9223372036854775807L; // Todo número Long em java precisa identificar pois se não ele acha que está tentando converter para int.
+        Float tipoFloat = 2.8F; // Mesma coisa para o Float(Precisa do F pois é para ter o entendimento do java tambem que é um número flutuante) pois se não tiver o F na frente o Java entende que isso é um Double
+        Double tipoDouble = 4.89;
+        //#endregion
+
+        //#region Tipos básico de texto.
+        String tipoString = "Sou um exemplo";
+        char tipoChar = 'I';
+        Boolean tipBoolean = true; // Boolean só recebe dados True ou False.
+        //#endregion
+        //#endregion
+
+        /*// Isso significa que estou instanciando uma classe, construindo um objeto.
+        Pessoa pessoa1 = new Pessoa();
+        pessoa1.setNome("Giovanni");
+        pessoa1.setIdade(20);
+        System.out.println("O nome da pessoa é: " + pessoa1.getNome());
+        System.out.println("A idade é: " + pessoa1.getIdade());
+        */
+        
+        /*Carro meuCarro = new Carro();
+        meuCarro.setAno(2011);
+        meuCarro.setModelo("Citroen C3");
+        meuCarro.setCor("Prata");
+        */
+        
+      /*  System.out.println("O ano do carro é: " + meuCarro.getAno());
+        System.out.println("O modelo do carro é: " + meuCarro.getModelo());
+        System.out.println("A cor do carro é: " + meuCarro.getCor());
+        */
+
+       // Carro novoCarro = new Carro("Fiat Uno", 2020, "Preto");
+        
+     /*   System.out.println("O ano do carro é: " + novoCarro.getAno());
+        System.out.println("O modelo do carro é: " + novoCarro.getModelo());
+        System.out.println("A cor do carro é: " + novoCarro.getCor());
+        */
+
+    }
+}
+/***
+ * 
+ * Formas de escrever:
+ * PascalCase: MeuCachorro (Letra maiuscula em toda as primeiras letras exemplo Meu e Cachorro) outro exemplo seria NotaFiscal.java(Sempre tem que acabar com .java) e só é utilizado em criação de arquivos, nome de classe e construtor da classe. 
+ * CamelCase: notaFiscal (Toda palavra começa com letra minuscula e a partir da segunda palavra vem com letra maiuscula) é utilizado em atributos.
+ * 
+ * Kibab-case: nota-fiscal (Escrever com tracinhos)
+ * snake_case: nota_fiscal (Escrever tudo minusculo e separado por underline)
+ */
+ 
+ public class Carro {
+    //#region Atributos
+    private String Modelo;
+    private int Ano;
+    private String Cor;
+    //#endregion
+
+    //#region Construtores
+    // Construtor simples(Default).
+    public Carro(){}
+    // Construtor personalizado. 
+    public Carro(String Modelo, int Ano, String Cor)
+    {
+        this.Modelo = Modelo;
+        this.Ano = Ano;
+        this.Cor = Cor;
+    }
+    //#endregion
+
+    //#region Getters e Setters (Get e Set)
+    public String getModelo() {
+        return Modelo;
+    }
+    public void setModelo(String modelo) {
+        Modelo = modelo;
+    }
+    public int getAno() {
+        return Ano;
+    }
+    public void setAno(int ano) {
+        Ano = ano;
+    }
+    public String getCor() {
+        return Cor;
+    }
+    public void setCor(String cor) {
+        Cor = cor;
+    }
+    //#endregion
+}
+
+public class Pessoa 
+{
+  // Atributos
+  private String nome;
+  private int idade;
+
+    // Aqui pode ter validações e outros.
+    // Get/Set
+  public void setNome(String nome)
+  {
+    this.nome = nome;
+  }
+
+  public String getNome()
+  {
+    return this.nome;
+  }
+
+  public void setIdade(int idade)
+  {
+    this.idade = idade;
+  }
+
+  public int getIdade()
+  {
+    return this.idade;
+  }
+    
+}
+
+/*
+ * Métodos acessores:
+ * 
+ * Public: Indica que qualquer um pode acessar o elemento;
+ * Private: Indica que somente a classe consegue acessar;
+ * Protected: Indica que somente a classe e seus filhos podem acessar;
+ * Default: Somente a classe, seus filhos e as classes no mesmo package, podem acessar.
+ */ 
+
+
+APLICAÇÕES
+
+//Main//
+package src;
+
+import src.model.ContaCorrente;
+import src.model.ContaPoupanca;
+import src.model.Movimentacao;
+import src.utils.DataUtil;
+
+
+public class App {
+
+    public static void main(String[] args) {
+     System.out.println("Criando nosso Banco Digital ");
+     System.out.println(); 
+        
+     ContaCorrente conta = new ContaCorrente("0001", "998765", 2, 100.00);
+     /*System.out.println(conta.getAgencia());
+     System.out.println(conta.getConta());
+     System.out.println(conta.getDigito());
+     */ 
+     System.out.println("Saldo atual de R$" + conta.getSaldo());
+     System.out.println();
+
+     conta.depositar(250.0);
+     System.out.println("Saldo atual de R$" + conta.getSaldo());
+     System.out.println();
+
+     var saque = conta.sacar(150.0); 
+     System.out.println("Saldo atual de R$" + conta.getSaldo());
+     System.out.println();
+
+     ContaPoupanca conta2 = new ContaPoupanca("0001", "998766", 3, 200.00);
+     conta2.transferir(100.0, conta);
+     System.out.println("Saldo conta destino de R$" + conta2.getSaldo());
+     System.out.println();
+
+     System.out.println("Saldo atual de R$" + conta.getSaldo());
+     System.out.println();
+
+     System.out.println(conta2.getDataAbertura());
+
+     var f1 = DataUtil.converterDateParaDataEHora(conta2.getDataAbertura());
+     var f2 = DataUtil.converterDateParaData(conta2.getDataAbertura());
+     var f3 = DataUtil.converterDateParaHora(conta2.getDataAbertura());
+
+     System.out.println(f1);
+     System.out.println();
+     System.out.println(f2);
+     System.out.println();
+     System.out.println(f3);
+     System.out.println();
+
+
+     // Extrato bancaria é composto por movimentações bancárias.
+     // Precisa ter algo que possa ser a movimentação. 
+     // Precisa ter uma lista de movimentações
+     
+     // Conta corrente.
+     conta.imprimiExtrato();
+
+     System.out.println();
+     System.out.println();
+
+     // Conta poupança.
+     conta2.imprimiExtrato();
+
+    }
+}
+
+//CLASS//
+package src.model;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.InputMismatchException;
+
+//#region Atributos com as opções
+// Abstract serve para ser uma forma de modelo assim não podendo instanciar nada dessa classe.
+public abstract class ContaBancaria {
+    
+    protected String agencia;
+    
+    protected String conta;
+    
+    protected int digito;
+    
+    protected double saldo;
+
+    protected Date dataAbertura;
+
+    protected ArrayList<Movimentacao> movimentacoes;
+
+    protected double VALOR_MINIMO_DEPOSITO = 10.0;
+//#endregion
+    
+//#region Construtores
+    public ContaBancaria(String agencia, String conta, int digito, double saldoInicial) {
+        this.agencia = agencia;
+        this.conta = conta;
+        this.digito = digito;
+        this.saldo = saldoInicial;
+        this.dataAbertura = new Date();
+        // Se não instanciar, vai dar uma exception de mullPointerException.
+        this.movimentacoes = new ArrayList<Movimentacao>();
+
+        // Criando a primeira movimentação.
+        Movimentacao movimentacao = new Movimentacao("Abertura da conta", saldoInicial);
+        
+        // Aqui estou salvando a movimentação dentro do meu array de movimentações.
+        // Aqui estou iniciando meu extrato bancario.
+        this.movimentacoes.add(movimentacao);
+    }
+
+    //#endregion
+
+//#region Get e Set para os atributos private
+
+    public String getAgencia() {
+        return agencia;
+    }
+
+    public void setAgencia(String agencia) {
+        this.agencia = agencia;
+    }
+
+    public String getConta() {
+        return conta;
+    }
+
+    public void setConta(String conta) {
+        this.conta = conta;
+    }
+
+    public int getDigito() {
+        return digito;
+    }
+
+    public void setDigito(int digito) {
+        this.digito = digito;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public Date getDataAbertura() {
+        return dataAbertura;
+    }
+
+    public double getVALOR_MINIMO_DEPOSITO() {
+        return VALOR_MINIMO_DEPOSITO;
+    }
+
+    public void setVALOR_MINIMO_DEPOSITO(double vALOR_MINIMO_DEPOSITO) {
+        VALOR_MINIMO_DEPOSITO = vALOR_MINIMO_DEPOSITO;
+    }
+    //#endregion
+
+//#region Metodos
+
+public void depositar(double valor)
+{
+
+    // Verifica se o valor de deposito é menor que o valor minimo.
+    // Se for não pode acontecer deposito
+    if(valor < VALOR_MINIMO_DEPOSITO) // Metodo para depositar 
+    {
+       throw new InputMismatchException(" O valor minimo de deposito é R$" + VALOR_MINIMO_DEPOSITO);
+    }
+
+    // Efetua o deposito somando o valor ao saldo.
+    this.saldo += valor;
+
+    // Aqui faço uma movimentação no extrato.
+    Movimentacao movimentacao = new Movimentacao("Deposito", valor);
+    this.movimentacoes.add(movimentacao);
+}
+
+public Double sacar(Double valor)
+    {
+      // Verifica se o valor é maior que o saldo da conta.
+      // Se for manda mensagem de saldo insuficiente.
+      if(valor > this.saldo)
+      {
+        throw new InputMismatchException("O saldo é insuficiente.");
+      }
+
+        // Aqui removemos o valor de saque do saldo atual caso passe por aquele if.
+        this.saldo -= valor;
+
+    // Aqui faço uma movimentação no extrato.
+    // Antes do return pois assim o return é a ultima linha para voltar tudo que foi feito dentro do metodo.
+    Movimentacao movimentacao = new Movimentacao("Retirada de valor", valor);
+    this.movimentacoes.add(movimentacao);
+
+        // Retorna o valor sacado ao usuario.
+        return valor;
+
+    }
+
+public void transferir(Double valor, ContaBancaria contaDestino)
+{
+    // Efetua um saque na conta atual
+    this.sacar(valor);
+
+    // Efetua o deposito na conta destino 
+    contaDestino.depositar(valor);
+}   
+//#endregion
+
+// Metodo abstrato obriga as classes que estão herdando de implementar este metodo.
+public abstract void imprimiExtrato();
+
+}
+
+package src.model;
+
+import java.util.Date;
+
+import src.utils.DataUtil;
+
+public class ContaCorrente extends ContaBancaria{
+
+    public ContaCorrente(String agencia, String conta, int digito, double saldoInicial)
+    {
+        // Aqui por baixo ele cria uma ContaBancaria.
+        // Este construtor herda tudo da ContaBancaria.
+        super(agencia, conta, digito, saldoInicial);
+    }
+
+    @Override
+    public void imprimiExtrato() 
+    {
+        
+       System.out.println("******************************");
+       System.out.println("****** Extrato Bancario ******");
+       System.out.println("******************************");
+       System.out.println();
+
+       System.out.println("Gerado em: " + DataUtil.converterDateParaDataEHora(new Date()));
+       System.out.println();
+
+       for (Movimentacao movimentacao : this.movimentacoes) 
+       {
+
+        System.out.println(movimentacao);
+        
+       }
+       System.out.println();
+
+       System.out.println("******************************");
+       System.out.println("******************************");
+       System.out.println("******************************");
+
+    }
+}
+
+package src.model;
+
+import java.util.Date;
+
+import src.utils.DataUtil;
+
+public class ContaPoupanca extends ContaBancaria {
+
+    public ContaPoupanca(String agencia, String conta, int digito, double saldoInicial) {
+        super(agencia, conta, digito, saldoInicial);
+        
+    }
+
+    @Override
+    public void imprimiExtrato() 
+    {
+    
+        System.out.println("******************************");
+        System.out.println("****** Extrato Poupança ******");
+        System.out.println("******************************");
+        System.out.println();
+ 
+        System.out.println("Gerado em: " + DataUtil.converterDateParaDataEHora(new Date()));
+        System.out.println();
+ 
+        for (Movimentacao movimentacao : this.movimentacoes) 
+        {
+ 
+         System.out.println(movimentacao);
+         
+        }
+ 
+        System.out.println("******************************");
+        System.out.println("******************************");
+        System.out.println("******************************");
+ 
+     
+        
+    }
+    
+    
+
+}
+
+package src.model;
+
+import java.util.Date;
+
+import src.utils.DataUtil;
+
+public class Movimentacao 
+{
+    //#region Atributos 
+    private String descricao;
+
+    private Date data;
+
+    private double valor;
+
+    //#endregion
+
+    //#region Get e Set
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    //#endregion
+
+    //#region Construtor
+    public Movimentacao(String descricao, double valor) {
+        this.descricao = descricao;
+        this.data = new Date();
+        this.valor = valor;
+    }
+
+    //#endregion
+
+    //#region Metodo
+
+    // Override metodo que estou dizendo que esse é o metodos novo e não o toString por padrão.
+    @Override
+    public String toString()
+    {
+
+     String dataFormatada = DataUtil.converterDateParaDataEHora(this.getData());
+
+     // Este return serve para mostrar essas informações, as aspas duplas nas linhas serve para colocar espaços e outras coisas como por exemplo \n é a quebra da linha dentro do texto e " - " serve pra dar espaço e acrescentar o hifen. Quando mandar imprimir se tem um melhpr entendimento.  
+      return this.getDescricao() + "\n" + dataFormatada + " - R$" + this.valor;       
+
+     // Quero que devolva Descrição em cima;
+     // Quero que devolva Data e Hora - Valor na mesma linha. 
+
+    }
+
+package src.utils;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DataUtil 
+{
+
+    //#region Metodo Data e Hora.
+    public static String converterDateParaDataEHora(Date data)
+    {
+       SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/YYYY HH:mm");
+       return formatador.format(data);
+    }
+
+     
+    //Metodo para apenas data
+    public static String converterDateParaData(Date data)
+    {
+       SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/YYYY");
+       return formatador.format(data);
+    }
+
+    //Metodo para apenas hora  
+    public static String converterDateParaHora(Date data)
+    {
+       SimpleDateFormat formatador = new SimpleDateFormat("HH:mm:ss");
+       return formatador.format(data);
+    }
+    
+    //#endregion
+
+}
