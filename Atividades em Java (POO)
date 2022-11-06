@@ -1,0 +1,815 @@
+Exercicio 1
+
+//PSVM
+package USCS;
+
+/**
+ *
+ * @author gioca
+ */
+public class Lista1 {
+
+    public static void main(String[] args) {
+        Empregado emp1;
+        emp1 = new Empregado();
+        emp1.codEmpregado = (123);
+        emp1.nomeEmpregado = ("Pedro");
+        emp1.cargoEmpregado = ("Programador Pleno");
+        emp1.salarioEmpregado = (1200);
+        
+        emp1.imprimeEmpregados();
+    }
+}
+
+//CLASS
+package USCS;
+
+/**
+ *
+ * @author gioca
+ */
+public class Empregado {
+    
+    public  int codEmpregado;
+    public String nomeEmpregado;
+    public String cargoEmpregado;
+    public int salarioEmpregado;
+    public static int totalEmpregado;
+    
+    public Empregado(int codEmpregado,String nomeEmpregado,String cargoEmpregado, int salarioEmpregado)
+    {
+        this.codEmpregado = codEmpregado;
+        this.nomeEmpregado = nomeEmpregado;
+        this.cargoEmpregado = cargoEmpregado;
+        this.salarioEmpregado = salarioEmpregado;
+    }
+    public Empregado()
+    {
+        Empregado.totalEmpregado++;
+    }
+    public void imprimeEmpregados()
+    {
+        System.out.println("Codigo do empregado: " + codEmpregado);
+        System.out.println("Nome do empregado: " + nomeEmpregado);
+        System.out.println("Cargo do empregado: " + cargoEmpregado);
+        System.out.println("Salario do empregado: " + salarioEmpregado);
+        System.out.println("Quantidade de empregado: " + totalEmpregado);
+    }
+}
+
+
+Exercicio 2
+
+///class///
+
+public class Empregado {
+    public  int codEmpregado;
+    public String nomeEmpregado;
+    public String cargoEmpregado;
+    public int salarioEmpregado;
+    public static int totalEmpregado;
+    
+    public Empregado(int codEmpregado,String nomeEmpregado,String cargoEmpregado, int salarioEmpregado)
+    {
+        this.codEmpregado = codEmpregado;
+        this.nomeEmpregado = nomeEmpregado;
+        this.cargoEmpregado = cargoEmpregado;
+        this.salarioEmpregado = salarioEmpregado;
+    }
+    public Empregado()
+    {
+        Empregado.totalEmpregado++;
+    }
+    public void imprimeEmpregados()
+    {
+        System.out.println("Codigo do empregado: " + codEmpregado);
+        System.out.println("Nome do empregado: " + nomeEmpregado);
+        System.out.println("Cargo do empregado: " + cargoEmpregado);
+        System.out.println("Salario do empregado: " + salarioEmpregado);
+        System.out.println("Quantidade de empregado: " + totalEmpregado);
+    }
+}
+
+///psvm///
+
+public class TesteEmpregado {
+    
+public static void main(String[] args)
+{
+    Empregado e1 = new Empregado();
+    e1.codEmpregado = (1232);
+    e1.nomeEmpregado = ("Paulo Silva");
+    e1.cargoEmpregado = ("Gerente financeiro");
+    e1.salarioEmpregado = (15400);
+    
+    Empregado e2 = new Empregado();
+    e2.codEmpregado = (4567);
+    e2.nomeEmpregado = ("Ana Paula");
+    e2.cargoEmpregado = ("Analista de Sistema Senior");
+    e2.salarioEmpregado = (10700);
+    
+    e1.imprimeEmpregados();
+    e2.imprimeEmpregados();
+}
+    
+}
+
+Exercicio 3
+
+ private String nomeEmpregado;
+    private String cargoEmpregado;
+    private int salarioEmpregado;
+    private static int totalEmpregado;
+    
+    public Empregado(int codEmpregado,String nomeEmpregado,String cargoEmpregado, int salarioEmpregado)
+    {
+        this.codEmpregado = codEmpregado;
+        this.nomeEmpregado = nomeEmpregado;
+        this.cargoEmpregado = cargoEmpregado;
+        this.salarioEmpregado = salarioEmpregado;
+    }
+    public Empregado()
+    {
+        Empregado.totalEmpregado++;
+    }
+    public void imprimeEmpregados()
+    {
+        System.out.println("Codigo do empregado: " + codEmpregado);
+        System.out.println("Nome do empregado: " + nomeEmpregado);
+        System.out.println("Cargo do empregado: " + cargoEmpregado);
+        System.out.println("Salario do empregado: " + salarioEmpregado);
+        System.out.println("Quantidade de empregado: " + totalEmpregado);
+    }
+}
+
+Exercicio 4
+
+A classe quando executada não ira mostrar nada pois os metodos definidos anteriormente eram public tera que ser feito o metodo get e set;
+
+Exercicio 5
+
+public class Empregado {
+    private  int codEmpregado;
+
+    public int getCodEmpregado() {
+        return codEmpregado;
+    }
+
+    public void setCodEmpregado(int codEmpregado) {
+        this.codEmpregado = codEmpregado;
+    }
+
+    public String getNomeEmpregado() {
+        return nomeEmpregado;
+    }
+
+    public void setNomeEmpregado(String nomeEmpregado) {
+        this.nomeEmpregado = nomeEmpregado;
+    }
+
+    public String getCargoEmpregado() {
+        return cargoEmpregado;
+    }
+
+    public void setCargoEmpregado(String cargoEmpregado) {
+        this.cargoEmpregado = cargoEmpregado;
+    }
+
+    public int getSalarioEmpregado() {
+        return salarioEmpregado;
+    }
+
+    public void setSalarioEmpregado(int salarioEmpregado) {
+        this.salarioEmpregado = salarioEmpregado;
+    }
+
+    public static int getTotalEmpregado() {
+        return totalEmpregado;
+    }
+
+    public static void setTotalEmpregado(int totalEmpregado) {
+        Empregado.totalEmpregado = totalEmpregado;
+    }
+    private String nomeEmpregado;
+    private String cargoEmpregado;
+    private int salarioEmpregado;
+    private static int totalEmpregado;
+    
+    public Empregado(int codEmpregado,String nomeEmpregado,String cargoEmpregado, int salarioEmpregado)
+    {
+        this.codEmpregado = codEmpregado;
+        this.nomeEmpregado = nomeEmpregado;
+        this.cargoEmpregado = cargoEmpregado;
+        this.salarioEmpregado = salarioEmpregado;
+    }
+    public Empregado()
+    {
+        Empregado.totalEmpregado++;
+    }
+    public void imprimeEmpregados()
+    {
+        System.out.println("Codigo do empregado: " + codEmpregado);
+        System.out.println("Nome do empregado: " + nomeEmpregado);
+        System.out.println("Cargo do empregado: " + cargoEmpregado);
+        System.out.println("Salario do empregado: " + salarioEmpregado);
+        System.out.println("Quantidade de empregado: " + totalEmpregado);
+    }
+}
+
+Exercicio 6
+
+///main///
+public class TesteEmpregado {
+    
+public static void main(String[] args)
+{
+    Empregado e1 = new Empregado();
+    e1.setCodEmpregado(1232);
+    e1.setNomeEmpregado("Paulo Silva");
+    e1.setCargoEmpregado("Gerente Financeiro");
+    e1.setSalarioEmpregado(15400);
+    
+    Empregado e2 = new Empregado();
+    e2.setCodEmpregado(4567);
+    e2.setNomeEmpregado("Ana Paula");
+    e2.setCargoEmpregado("Analista de Sistema Senior");
+    e2.setSalarioEmpregado(10700);
+    
+    e1.imprimeEmpregados();
+    e2.imprimeEmpregados();
+}
+    
+}
+
+///class///
+public class Empregado {
+    private  int codEmpregado;
+
+    public int getCodEmpregado() {
+        return codEmpregado;
+    }
+
+    public void setCodEmpregado(int codEmpregado) {
+        this.codEmpregado = codEmpregado;
+    }
+
+    public String getNomeEmpregado() {
+        return nomeEmpregado;
+    }
+
+    public void setNomeEmpregado(String nomeEmpregado) {
+        this.nomeEmpregado = nomeEmpregado;
+    }
+
+    public String getCargoEmpregado() {
+        return cargoEmpregado;
+    }
+
+    public void setCargoEmpregado(String cargoEmpregado) {
+        this.cargoEmpregado = cargoEmpregado;
+    }
+
+    public int getSalarioEmpregado() {
+        return salarioEmpregado;
+    }
+
+    public void setSalarioEmpregado(int salarioEmpregado) {
+        this.salarioEmpregado = salarioEmpregado;
+    }
+
+    public static int getTotalEmpregado() {
+        return totalEmpregado;
+    }
+
+    public static void setTotalEmpregado(int totalEmpregado) {
+        Empregado.totalEmpregado = totalEmpregado;
+    }
+    private String nomeEmpregado;
+    private String cargoEmpregado;
+    private int salarioEmpregado;
+    private static int totalEmpregado;
+    
+    public Empregado(int codEmpregado,String nomeEmpregado,String cargoEmpregado, int salarioEmpregado)
+    {
+        this.codEmpregado = codEmpregado;
+        this.nomeEmpregado = nomeEmpregado;
+        this.cargoEmpregado = cargoEmpregado;
+        this.salarioEmpregado = salarioEmpregado;
+    }
+    public Empregado()
+    {
+        Empregado.totalEmpregado++;
+    }
+    public void imprimeEmpregados()
+    {
+        System.out.println("Codigo do empregado: " + codEmpregado);
+        System.out.println("Nome do empregado: " + nomeEmpregado);
+        System.out.println("Cargo do empregado: " + cargoEmpregado);
+        System.out.println("Salario do empregado: " + salarioEmpregado);
+        System.out.println("Quantidade de empregado: " + totalEmpregado);
+    }
+}
+
+Exercicio 7
+
+public class Empregado {
+    
+    private static int codEmpregado;
+
+    public static int getCodEmpregado() {
+        return codEmpregado;
+    }
+
+    public static void setCodEmpregado(int codEmpregado) {
+        Empregado.codEmpregado = codEmpregado;
+    }
+
+    public String getNomeEmpregado() {
+        return nomeEmpregado;
+    }
+
+    public void setNomeEmpregado(String nomeEmpregado) {
+        this.nomeEmpregado = nomeEmpregado;
+    }
+
+    public String getCargoEmpregado() {
+        return cargoEmpregado;
+    }
+
+    public void setCargoEmpregado(String cargoEmpregado) {
+        this.cargoEmpregado = cargoEmpregado;
+    }
+
+    public int getSalarioEmpregado() {
+        return salarioEmpregado;
+    }
+
+    public void setSalarioEmpregado(int salarioEmpregado) {
+        this.salarioEmpregado = salarioEmpregado;
+    }
+
+    public static int getTotalEmpregado() {
+        return totalEmpregado;
+    }
+
+    public static void setTotalEmpregado(int totalEmpregado) {
+        Empregado.totalEmpregado = totalEmpregado;
+    }
+    private String nomeEmpregado;
+    private String cargoEmpregado;
+    private int salarioEmpregado;
+    private static int totalEmpregado;
+    
+    public Empregado(int codEmpregado,String nomeEmpregado,String cargoEmpregado, int salarioEmpregado)
+    {
+        Empregado.codEmpregado = codEmpregado;
+        this.nomeEmpregado = nomeEmpregado;
+        this.cargoEmpregado = cargoEmpregado;
+        this.salarioEmpregado = salarioEmpregado;
+    }
+    public Empregado()
+    {
+        Empregado.totalEmpregado++;
+    }
+    public Empregado(int codEmpregado)
+    {
+        Empregado.codEmpregado++;
+    }
+    public void imprimeEmpregados()
+    {
+        System.out.println("\nCodigo do empregado: " + codEmpregado++);
+        System.out.println("Nome do empregado: " + nomeEmpregado);
+        System.out.println("Cargo do empregado: " + cargoEmpregado);
+        System.out.println("Salario do empregado: " + salarioEmpregado);
+        System.out.println("Quantidade de empregado: " + totalEmpregado);
+    }
+}
+
+
+LISTA 2 
+
+//main TesteComputador//
+
+package uscs;
+ 
+public class TesteComputador {
+    public static void main(String[] args)
+    {
+ 
+        Teclado t = new Teclado();
+        t.setNumeroSerie("1232");
+        t.setFabricante("Logitech");
+        t.setCor("Preto");
+ 
+       
+       
+       
+        Monitor mon = new Monitor();
+        mon.setNumeroSerie("AFB876");
+        mon.setFabricante("Samsung");
+        mon.setCor("Preto");
+ 
+   
+       
+       
+        Gabinete g = new Gabinete();
+        g.setNumeroSerie("4587HHY");
+        g.setFabricante("Logitech");
+        g.setCor("Preto");
+ 
+       
+       
+ 
+        Mouse m = new Mouse();
+        m.setNumeroSerie("HGY6654");
+        m.setFabricante("Microsoft");
+        m.setCor("Preto");
+ 
+       
+        Computador cp = new Computador();
+        cp.setNumeroSerie("76TRDE35");
+        cp.imprimeComputador();
+        System.out.println();
+        t.imprimeTeclado();
+        System.out.println();
+        mon.imprimeMonitor();
+        System.out.println();
+        g.imprimeGabinete();
+        System.out.println();
+        m.imprimeMouse();
+        System.out.println();
+ 
+    }
+}
+ 
+
+Gabinete
+
+package uscs;
+ 
+public class Gabinete
+{
+ 
+       //#region Atributos
+       private String numeroSerie;
+       private String Fabricante;
+       private String Cor;
+       //#endregion
+   
+       //#region Get e Set
+       public String getNumeroSerie() {
+           return numeroSerie;
+       }
+       public void setNumeroSerie(String numeroSerie) {
+           this.numeroSerie = numeroSerie;
+       }
+       public String getFabricante() {
+           return Fabricante;
+       }
+       public void setFabricante(String fabricante) {
+           this.Fabricante = fabricante;
+       }
+       public String getCor() {
+           return Cor;
+       }
+       public void setCor(String cor) {
+           this.Cor = cor;
+       }
+       //#endregion
+   
+       //#region Construtores
+       public Gabinete(String numeroSerie, String Fabricante, String Cor)
+       {
+           this.numeroSerie = numeroSerie;
+           this.Fabricante = Fabricante;
+           this.Cor = Cor;
+       }
+   
+       public Gabinete()
+       {
+   
+       }
+       //#endregion
+   
+       //#region Função
+       public void imprimeGabinete()
+       {
+           System.out.println("O numero de serie do gabinete é: " + numeroSerie);
+           System.out.println("O fabricante do gabinete é: " + Fabricante);
+           System.out.println("A cor do gabinete é: " + Cor);
+       }
+       //#endregion
+     
+
+Teclado
+package uscs;
+ 
+public class Teclado
+{
+   
+    //#region Atributos
+    private String numeroSerie;
+    private String Fabricante;
+    private String Cor;
+    //#endregion
+ 
+    //#region Get e Set
+    public String getNumeroSerie() {
+        return numeroSerie;
+    }
+    public void setNumeroSerie(String numeroSerie) {
+        this.numeroSerie = numeroSerie;
+    }
+    public String getFabricante() {
+        return Fabricante;
+    }
+    public void setFabricante(String fabricante) {
+        this.Fabricante = fabricante;
+    }
+    public String getCor() {
+        return Cor;
+    }
+    public void setCor(String cor) {
+        this.Cor = cor;
+    }
+    //#endregion
+ 
+    //#region Construtores
+    public Teclado(String numeroSerie, String Fabricante, String Cor)
+    {
+        this.numeroSerie = numeroSerie;
+        this.Fabricante = Fabricante;
+        this.Cor = Cor;
+    }
+ 
+    public Teclado()
+    {
+ 
+    }
+    //#endregion
+ 
+    //#region Função
+    public void imprimeTeclado()
+    {
+        System.out.println("O numero de serie do teclado é: " + numeroSerie);
+        System.out.println("O fabricante do teclado é: " + Fabricante);
+        System.out.println("A cor do teclado é: " + Cor);
+    }
+    //#endregion
+ 
+}
+ 
+
+Mouse
+
+package uscs;
+ 
+public class Mouse
+{
+ 
+   
+    //#region Atributos
+    private String numeroSerie;
+    private String Fabricante;
+    private String Cor;
+    //#endregion
+ 
+    //#region Get e Set
+    public String getNumeroSerie() {
+        return numeroSerie;
+    }
+    public void setNumeroSerie(String numeroSerie) {
+        this.numeroSerie = numeroSerie;
+    }
+    public String getFabricante() {
+        return Fabricante;
+    }
+    public void setFabricante(String fabricante) {
+        this.Fabricante = fabricante;
+    }
+    public String getCor() {
+        return Cor;
+    }
+    public void setCor(String cor) {
+        this.Cor = cor;
+    }
+    //#endregion
+ 
+    //#region Construtores
+    public Mouse(String numeroSerie, String Fabricante, String Cor)
+    {
+        this.numeroSerie = numeroSerie;
+        this.Fabricante = Fabricante;
+        this.Cor = Cor;
+    }
+ 
+    public Mouse()
+    {
+ 
+    }
+    //#endregion
+ 
+    //#region Função
+    public void imprimeMouse()
+    {
+        System.out.println("O numero de serie do mouse é: " + numeroSerie);
+        System.out.println("O fabricante do mouse é: " + Fabricante);
+        System.out.println("A cor do mouse é: " + Cor);
+    }
+    //#endregion
+   
+}
+
+
+Monitor
+
+package uscs;
+ 
+public class Monitor
+{
+ 
+   
+    //#region Atributos
+    private String numeroSerie;
+    private String Fabricante;
+    private String Cor;
+    //#endregion
+ 
+    //#region Get e Set
+    public String getNumeroSerie() {
+        return numeroSerie;
+    }
+    public void setNumeroSerie(String numeroSerie) {
+        this.numeroSerie = numeroSerie;
+    }
+    public String getFabricante() {
+        return Fabricante;
+    }
+    public void setFabricante(String fabricante) {
+        this.Fabricante = fabricante;
+    }
+    public String getCor() {
+        return Cor;
+    }
+    public void setCor(String cor) {
+        this.Cor = cor;
+    }
+    //#endregion
+ 
+    //#region Construtores
+    public Monitor(String numeroSerie, String Fabricante, String Cor)
+    {
+        this.numeroSerie = numeroSerie;
+        this.Fabricante = Fabricante;
+        this.Cor = Cor;
+    }
+ 
+    public Monitor()
+    {
+ 
+    }
+    //#endregion
+ 
+    //#region Função
+    public void imprimeMonitor()
+    {
+        System.out.println("O numero de serie do monitor é: " + numeroSerie);
+        System.out.println("O fabricante do monitor é: " + Fabricante);
+        System.out.println("A cor do monitor é: " + Cor);
+    }
+    //#endregion
+   
+}
+ 
+
+
+Computador
+
+package uscs;
+ 
+public class Computador
+{
+ 
+    //#region Atributos
+    private String numeroSerie;
+    private String Teclado;
+    private String Mouse;
+    private String Gabinete;
+    //#endregion
+ 
+    //#region Get e Set
+    public String getNumeroSerie() {
+        return numeroSerie;
+    }
+    public void setNumeroSerie(String numeroSerie) {
+        this.numeroSerie = numeroSerie;
+    }
+    public String getTeclado() {
+        return Teclado;
+    }
+    public void setTeclado(String teclado) {
+        this.Teclado = teclado;
+    }
+    public String getMouse() {
+        return Mouse;
+    }
+    public void setMouse(String mouse) {
+        this.Mouse = mouse;
+    }
+    public String getGabinete() {
+        return Gabinete;
+    }
+    public void setGabinete(String gabinete) {
+        this.Gabinete = gabinete;
+    }
+    //#endregion
+ 
+    //#region Construtores
+    public Computador(String numeroSerie)
+    {
+        this.numeroSerie = numeroSerie;
+    }
+ 
+    public Computador()
+    {
+ 
+    }
+    //#endregion
+ 
+    //#region Função
+    public void imprimeComputador()
+    {
+        System.out.println("O numero de serie do computador é: " + numeroSerie);
+    }
+   
+   LISTA 3 EM DESENVOLVIMENTO
+   
+   Exercicio 1 
+
+//class Empregado//
+
+package uscs;
+ 
+public class Empregado
+{
+ 
+    //#region Atributos
+    private String nome;
+    private String endereco;
+    private int valorHora;
+    private int qtdHora;
+    //#endregion
+ 
+    //#region Get Set
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public String getEndereco() {
+        return endereco;
+    }
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+    public int getValorHora() {
+        return valorHora;
+    }
+    public void setValorHora(int valorHora) {
+        this.valorHora = valorHora;
+    }
+    public int getQtdHora() {
+        return qtdHora;
+    }
+    public void setQtdHora(int qtdHora) {
+        this.qtdHora = qtdHora;
+    }
+    //#endregion
+ 
+    //#region Construtores
+    public Empregado(String nome, String endereco, int valorHora, int qtdHora)
+    {
+       this.nome = nome;
+       this.endereco = endereco;
+       this.valorHora = valorHora;
+       this.qtdHora = qtdHora;
+    }
+ 
+    public Empregado()
+    {
+ 
+    }
+    //#endregion
+ 
+    //#region Metodos
+ 
+    public void imprimeEmpregado()
+    {
+        System.out.println("Nome: " + nome);
+        System.out.println("Endereço: " + endereco);
+        System.out.println("Salario: " + valorHora);
+        System.out.println("Quantidade de hoeras trabalhadas: " + qtdHora);
+    }
+   
+
